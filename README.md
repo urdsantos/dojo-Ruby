@@ -3,6 +3,7 @@
 ## Requisitos
 -   Ruby 2.6.6
 -   Git
+-   Yarn
 
 Recomendo o uso do rbenv para o Ruby:
 -   https://github.com/rbenv/rbenv
@@ -11,8 +12,28 @@ Recomendo o uso do rbenv para o Ruby:
 
 A stack foi testada nos seguintes ambientes:
 
-- Windows 10 Pro
-- Ubuntu 20.04.4 LTS
+-   Windows 10 Pro
+-   Ubuntu 20.04.4 LTS
+
+
+## Baixando ambiente para nossos testes
+
+-   Acessar Github: https://github.com/jhonatasmatos/bugbank
+
+### Baixando o projeto
+-   `git clone https://github.com/jhonatasmatos/bugbank.git`
+
+Agora acesse a pasta do projeto e digite o comando abaixo para baixar e atualizar as depecias do projeto.
+
+-   `yarn`
+
+### Rodando o projeto
+
+Para rodar o projeto, acesse a pasta do projeto via terminal e execute o comando:
+-   `yarn dev`
+
+Agora acesse no browser o endereço localhost:3000
+
 
 ## Setup
 
