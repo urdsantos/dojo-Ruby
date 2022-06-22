@@ -1,4 +1,7 @@
 require "cpf_cnpj"
+cpfNumber = CPF.generate
+cpf = CPF.new(cpfNumber)
+timeNow = Time.new
 
 Dado('que eu esteja na página inicial da pagamentos {string}') do |plataforma|
     visit plataforma
@@ -23,11 +26,9 @@ Dado('que eu esteja na página inicial da pagamentos {string}') do |plataforma|
 
 
   E('deve ser preenchido a Fantasia {string}, Razão Social {string}, CPF válido, Email {string}') do |fantasia, razao_social, email|
-    cpfNumber = CPF.generate
-    cpf = CPF.new(cpfNumber)
 
-    find('#client_name').set fantasia
-    find('#client_company_name').set razao_social
+    find('#client_name').set fantasia + timeNow.strftime(" | %d/%m/%Y - %H:%M:%S")
+    find('#client_company_name').set razao_social + timeNow.strftime(" | %d/%m/%Y - %H:%M:%S")
     fill_in 'client_document_number', with: cpf.formatted
     find('#client_onboarding_email').set email
     find('.select2-selection__placeholder').click
