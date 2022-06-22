@@ -1,3 +1,5 @@
+require "cpf_cnpj"
+
 Dado('que eu esteja na página inicial da pagamentos {string}') do |plataforma|
     visit plataforma
   end
@@ -20,10 +22,13 @@ Dado('que eu esteja na página inicial da pagamentos {string}') do |plataforma|
 
 
 
-  E('deve ser preenchido a Fantasia {string}, Razão Social {string}, CNPJ {string}, Email {string}') do |fantasia, razao_social, cnpj, email|
+  E('deve ser preenchido a Fantasia {string}, Razão Social {string}, CPF válido, Email {string}') do |fantasia, razao_social, email|
+    cpfNumber = CPF.generate
+    cpf = CPF.new(cpfNumber)
+
     find('#client_name').set fantasia
     find('#client_company_name').set razao_social
-    find('#client_document_number').set cnpj
+    fill_in 'client_document_number', with: cpf.formatted
     find('#client_onboarding_email').set email
     find('.select2-selection__placeholder').click
     sleep 2

@@ -12,7 +12,7 @@ Dado que eu esteja na página inicial da pagamentos 'https://dev-pagamentos.graf
 E realize o login com o usuário 'andre.luiz@grafeno.digital' e senha 'GR@feno10'
 Quando clicar em novo pedido de Onboarding
 Então deve ser exibido o formulário de novo Onboarding
-E deve ser preenchido a Fantasia 'AUTOMAÇÃO FANTASIA', Razão Social 'AUTOMAÇÃO RAZÃO SOCIAL', CNPJ '08987286000152', Email 'automation@grafeno.digital'
+E deve ser preenchido a Fantasia 'AUTOMAÇÃO FANTASIA', Razão Social 'AUTOMAÇÃO RAZÃO SOCIAL', CPF válido, Email 'automation@grafeno.digital'
 Quando clicar em salvar
-Então deverá ser exibida a mensagem 'Onboarding criado com sucesso'
+Então deverá ser exibida a mensagem 'Participante enviado para o sistema de cadastros. Se aprovado, será retornado para pagamentos'
 
