@@ -43,3 +43,30 @@ Dado('que eu esteja na página inicial da pagamentos {string}') do |plataforma|
   Então('deverá ser exibida a mensagem {string}') do |mensagem_sucesso|
     expect(page).to have_content mensagem_sucesso
   end
+
+
+
+
+  Dado('que eu acesse a página da Cadastros {string}') do |site_cadastros|
+    visit site_cadastros
+  end
+  
+  Dado('entrar em Solicitações de Cadastro') do
+    pending # Write code here that turns the phrase above into concrete actions
+  end
+  
+  Dado('localizar a empresa pelo CPF') do
+    pending # Write code here that turns the phrase above into concrete actions
+  end
+  
+  Quando('localizar o CPF corretamente') do
+    pending # Write code here that turns the phrase above into concrete actions
+  end
+  
+  Então('deverei clicar no link') do
+    pending # Write code here that turns the phrase above into concrete actions
+  end
+  
+  Então('ser direcionado para a tela de Onboarding') do
+    pending # Write code here that turns the phrase above into concrete actions
+  end

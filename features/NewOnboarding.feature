@@ -16,3 +16,12 @@ E deve ser preenchido a Fantasia 'AUTOMAÇÃO FANTASIA', Razão Social 'AUTOMAÇ
 Quando clicar em salvar
 Então deverá ser exibida a mensagem 'Participante enviado para o sistema de cadastros. Se aprovado, será retornado para pagamentos'
 
+
+Cenario: Acessar o convite do Onboarding
+    Dado que eu acesse a página da Cadastros 'https://cadastros.dev.grafeno.be'
+    E entrar em Solicitações de Cadastro
+    E localizar a empresa pelo CPF
+    Quando localizar o CPF corretamente
+    Então deverei clicar no link
+    E ser direcionado para a tela de Onboarding
+
