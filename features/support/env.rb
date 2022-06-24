@@ -8,5 +8,5 @@ Capybara.configure do |config|
   # :selenium -> execução do firefox levantando o navegador
   # :selenium_headless -> execução do firefox em headless
   config.default_driver = :selenium_chrome
-  config.default_max_wait_time = 10 #define o tempo limite que o capybara vai aguardar o elemento ficar disponível
+  config.default_max_wait_time = 3 #define o tempo limite que o capybara vai aguardar o elemento ficar disponível
 end

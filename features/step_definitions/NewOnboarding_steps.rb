@@ -49,24 +49,32 @@ Dado('que eu esteja na página inicial da pagamentos {string}') do |plataforma|
 
   Dado('que eu acesse a página da Cadastros {string}') do |site_cadastros|
     visit site_cadastros
+
+  end
+
+  E('realize login com usuario {string} e senha {string}') do |usuario, senha|
+    fill_in 'admin_user_email', with: usuario
+    fill_in 'admin_user_password', with: senha
+    click_button 'Log in'
   end
   
-  Dado('entrar em Solicitações de Cadastro') do
-    pending # Write code here that turns the phrase above into concrete actions
+  E('entrar em Solicitações de Cadastro') do
+   find('#register_requests').click
   end
   
-  Dado('localizar a empresa pelo CPF') do
-    pending # Write code here that turns the phrase above into concrete actions
+  E('localizar a empresa pelo CPF') do
+   fill_in 'q_client_document_number_cont_numbers', with: cpf.formatted
+   click_button 'Filtrar'
   end
   
-  Quando('localizar o CPF corretamente') do
-    pending # Write code here that turns the phrase above into concrete actions
+  Quando('selecionar o cadastro corretamente') do
+    find('#index_table_register_requests > tbody:nth-child(2)', text: cpf.formatted).click
   end
   
-  Então('deverei clicar no link') do
-    pending # Write code here that turns the phrase above into concrete actions
+  E('clicar no link') do
+    click_link 'Link'
   end
   
-  Então('ser direcionado para a tela de Onboarding') do
-    pending # Write code here that turns the phrase above into concrete actions
+  Então('serei direcionado para a tela de Onboarding') do
+    expect(page).to have_content 'A sua experiência Grafeno começa agora.'
   end
