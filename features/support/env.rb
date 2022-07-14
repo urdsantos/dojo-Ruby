@@ -1,12 +1,19 @@
 require "capybara"
-require "capybara/cucumber"
 require "selenium-webdriver"
 
-Capybara.configure do |config|
-  # :selenium_chrome_headless -> execução em headless do chrome sem abrir o navegador
-  # :selenium_chrome -> execução do chrome levantando o navegador
-  # :selenium -> execução do firefox levantando o navegador
-  # :selenium_headless -> execução do firefox em headless
-  config.default_driver = :selenium_chrome
-  config.default_max_wait_time = 3 #define o tempo limite que o capybara vai aguardar o elemento ficar disponível
+driver = :selenium_chrome_headless
+
+Capybara.server = :puma, { Silent: true }
+
+Capybara.register_driver driver do |app|
+  options = ::Selenium::WebDriver::Chrome::Options.new
+
+  options.add_argument("--headless")
+  options.add_argument("--no-sandbox")
+  options.add_argument("--disable-dev-shm-usage")
+  options.add_argument("--window-size=1600,1024")
+
+  Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
 end
+
+Capybara.javascript_driver = driver
