@@ -1,19 +1,13 @@
 require "capybara"
+require "capybara/cucumber"
 require "selenium-webdriver"
+require "site_prism"
+require "site_prism/all_there" # Optional but needed to perform more complex matching
 
-driver = :selenium_chrome_headless
-
-Capybara.server = :puma, { Silent: true }
-
-Capybara.register_driver driver do |app|
-  options = ::Selenium::WebDriver::Chrome::Options.new
-
-  options.add_argument("--headless")
-  options.add_argument("--no-sandbox")
-  options.add_argument("--disable-dev-shm-usage")
-  options.add_argument("--window-size=1600,1024")
-
-  Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
+Capybara.configure do |config|
+  config.default_driver = :selenium_chrome
+  #Comando para não abrir o chrome
+  #config.default_driver = :selenium_chrome_headless
+  #Configurando o time out da página para que possa ser encontrado o elemento
+  config.default_max_wait_time = 10
 end
-
-Capybara.javascript_driver = driver
