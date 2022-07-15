@@ -5,7 +5,7 @@
         Onde possa inserir as credencias de acesso
         Houver a validações dos dados, deve ter um retorno ao usuário;
 
-    @doing
+    
     Cenário: Acessar Grafeno Pagamentos
         
         Dado que deseja acessar plataforma
