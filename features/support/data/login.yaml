@@ -1,0 +1,11 @@
+user_invalid:
+  email:  uesley.santos+teste@grafeno.digital
+  password: 
+  
+user_block:
+  email: uesley.santos+bloqueio@grafeno.digital
+  password: 250628u#S
+
+user_validad:
+  email:  uesley.santos@grafeno.digital
+  password:  250628u#S
