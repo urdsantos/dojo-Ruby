@@ -24,7 +24,6 @@
         Quando informar credenciais de usuário bloqueado pelo administrador
         Então deve impedir acesso a plataforma e exibir mensagem
 
-    @doing
     Cenário: Login Válido
 
         Quando informar credencias válidas de acesso

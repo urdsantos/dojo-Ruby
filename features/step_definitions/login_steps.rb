@@ -36,5 +36,5 @@ Quando("informar credencias válidas de acesso") do
 end
 
 Então("deve logar usuário a plataforma") do
-  expect(@dashboard).to have_salutation
+  expect(@dashboard_page).to have_salutation
 end
