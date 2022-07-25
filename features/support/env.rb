@@ -10,4 +10,6 @@ Capybara.configure do |config|
   #config.default_driver = :selenium_chrome_headless
   #Configurando o time out da página para que possa ser encontrado o elemento
   config.default_max_wait_time = 10
+  config.app_host = "https://dev-pagamentos.grafeno.be/"
+  config.run_server = false
 end
